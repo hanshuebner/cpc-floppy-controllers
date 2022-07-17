@@ -1,0 +1,37 @@
+# ! In Fit/Implementation template, choose "Optimize Density"
+
+PIN "Button"	LOC = P7; //P38;
+PIN "Button2"	LOC = P19; //P2;
+
+PIN "CHG_Txd"	LOC = P8; //P39;
+PIN "CHG_Rxd"	LOC = P9; //P40;
+
+PIN "nRomEN"	LOC = P10; //P41;
+PIN "nM1"	LOC = P38; //P42;
+PIN "nMreq"	LOC = P60; //P29;
+PIN "nWr"	LOC = P44; //P20;
+PIN "nRd"	LOC = P43; //P19;
+PIN "Clk"	LOC = P15; //P43;
+NET "Clk" BUFG = CLK;
+PIN "Rdy"	LOC = P56; //P27;
+PIN "A15"	LOC = P45; //P21;
+PIN "A14"	LOC = P48; //P22;
+PIN "nRst"	LOC = P64; //P33;
+PIN "DataBus<0>"	LOC = P42; //P18;
+PIN "DataBus<1>"	LOC = P36; //P14;
+PIN "DataBus<2>"	LOC = P35; //P13;
+PIN "DataBus<3>"	LOC = P33; //P12;
+PIN "DataBus<4>"	LOC = P27; //P8;
+PIN "DataBus<5>"	LOC = P25; //P7;
+PIN "DataBus<6>"	LOC = P24; //P6;
+PIN "DataBus<7>"	LOC = P22; //P5;
+PIN "Romdis"	LOC = P50; //P23;
+PIN "Ramdis"	LOC = P57; //P28;
+
+PIN "nEp_Ce"	LOC = P6; //P37;
+PIN "nEp_Wr"	LOC = P20; //P3;
+PIN "Ep_A18_14<0>"	LOC = P61; //P30;
+PIN "Ep_A18_14<1>"	LOC = P62; //P31;
+PIN "Ep_A18_14<2>"	LOC = P63; //P32;
+PIN "Ep_A18_14<3>"	LOC = P2; //P34;
+PIN "Ep_A18_14<4>"	LOC = P5; //P36;
