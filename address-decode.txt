@@ -1,0 +1,5 @@
+
+1111 1011 1111 0110 FBF6 Status
+1111 1011 1111 0111 FBF7 Data
+1111 1010 0111 1110 FA7E Motor
+xxxx xxx. .xxx .xx.
