@@ -66,7 +66,7 @@ begin
 
   process (CLK4)
   begin
-    if falling_edge(CLK4) then
+    if rising_edge(CLK4) then
       if nIORQ = '0' and A(15 downto 1) & '0' = x"FBF6" then
         nFDCCS <= '0';
       else
