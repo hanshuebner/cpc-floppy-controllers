@@ -1,12 +1,10 @@
-project_name ?= cpld_ram1m_plcc84
-#project_name ?= cpld_ram1m
-#target ?= xc9572-10-PC44
-#target ?= xc95108-10-PC84
-target ?= xc9572-10-PC84
-#target ?= xc9536-10-PC44
+project_name ?= cpc-fdc-cpld
+target ?= xc9572xl-5-VQ64
 
 # alternative speed, density
 optimize ?= speed
+
+all: lso synthesis ngdbuild cpldfit tsim jedec netgen
 
 lso:
 	echo "work" > ${project_name}.lso
@@ -49,9 +47,5 @@ jedec:
 netgen:
 	netgen -w -ofmt verilog  -aka ${project_name}.ngd
 
-all: clean lso synthesis ngdbuild cpldfit tsim jedec netgen
 
-clean:
-	rm -rf *~ .#*
-	rm -rf  `ls -1 | egrep -v '(prj|\.xst|README|Makefile)'`
 
