@@ -41,13 +41,15 @@ entity CPC_FDC is
 
          A: in std_logic_vector(15 downto 0);
          D0: in std_logic;
+         nIORQ: in std_logic;
          nWR: in std_logic;
-         nRD: in std_logic;
+         nRD: in std_logic
 );
 end CPC_FDC;
 
 architecture Behavioral of CPC_FDC is
 
+begin
 end Behavioral;
 
 
