@@ -71,4 +71,10 @@ clean:
 		cpc-fdc-cpld_xc9572xl-5-VQ64.jed \
 		cpc-fdc-cpld_xst.xrpt \
 		tmperr.err \
+		CPC_FDC.lso \
+		cpc-fdc-cpld.ngc \
+		cpc-fdc-cpld.ngr \
+		tmperr.err \
+		xlnx_auto_0_xdb/ \
+		xst/ \
 		*~
