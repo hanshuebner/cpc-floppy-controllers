@@ -4,7 +4,7 @@
 -- Engineer:            Daniel Leon - Dandare
 -- 
 -- Create Date:         2018/08/07
--- Design Name:         CPC_Dandanator_Mini
+-- Design Name:         CPC_FDC_Mini
 -- Module Name:         CPC Dandanator - Behavioral 
 -- Project Name:        CPC Dandanator Mini
 -- Target Devices:      Xilinx xc9572xl 
@@ -20,7 +20,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity CPC_Dandanator is
+entity CPC_FDC is
   port ( Button: in std_logic;
          Button2: in std_logic; 
          nRomEN: in std_logic;                                          -- NEW in HW Version 1.3
@@ -42,9 +42,9 @@ entity CPC_Dandanator is
          nEp_Wr: out std_logic := '1';
          Ep_A18_14: out std_logic_vector (4 downto 0) := "00000";
          CHG_Rxd: out std_logic := '1');
-end CPC_Dandanator;
+end CPC_FDC;
 
-architecture Behavioral of CPC_Dandanator is
+architecture Behavioral of CPC_FDC is
 
   type ZoneArray is array (0 to 1) of std_logic_vector(4 downto 0);      -- ZoneArray is the slot selection for the eeprom memory (2 simultaneous slots) + Alternate Slot 0
   shared variable FRZone: std_logic_vector (1 downto 0);                 -- This will hold the FollowRomE lower bits for zone0 -> so available slots are 28,29,30 and 31 for this zone.
@@ -281,7 +281,7 @@ begin
             'Z';
   Ramdis <= '1' when BusHack = '1' else
             '1' when nEpChipE = '0' else   
-            'Z’;
+            'Z';
 
   Ep_A18_14 <= ZoneSlotN(0) when A14 = '0' and A15 = to_stdulogic(ZoneAlloc(0)) else  -- Actual Eeprom zone mapper of addresses               
                ZoneSlotN(1);
