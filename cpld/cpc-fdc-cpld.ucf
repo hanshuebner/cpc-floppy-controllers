@@ -1,37 +1,55 @@
 # ! In Fit/Implementation template, choose "Optimize Density"
 
-PIN "Button"	LOC = P7; //P38;
-PIN "Button2"	LOC = P19; //P2;
+PIN "nDS0" LOC = P8;
+PIN "nDS1" LOC = P9;
+PIN "nDS2" LOC = P10;
+PIN "nDS3" LOC = P11;
+PIN "STEP" LOC = P12;
+PIN "WGATE" LOC = P13;
+PIN "TRK00" LOC = P15;
+PIN "WE" LOC = P64;
+PIN "MTRON" LOC = P7;
 
-PIN "CHG_Txd"	LOC = P8; //P39;
-PIN "CHG_Rxd"	LOC = P9; //P40;
+PIN "CFG4" LOC = P17;
+PIN "CFG3" LOC = P18;
+PIN "CFG2" LOC = P19;
+PIN "CFG1" LOC = P20;
 
-PIN "nRomEN"	LOC = P10; //P41;
-PIN "nM1"	LOC = P38; //P42;
-PIN "nMreq"	LOC = P60; //P29;
-PIN "nWr"	LOC = P44; //P20;
-PIN "nRd"	LOC = P43; //P19;
-PIN "Clk"	LOC = P15; //P43;
-NET "Clk" BUFG = CLK;
-PIN "Rdy"	LOC = P56; //P27;
-PIN "A15"	LOC = P45; //P21;
-PIN "A14"	LOC = P48; //P22;
-PIN "nRst"	LOC = P64; //P33;
-PIN "DataBus<0>"	LOC = P42; //P18;
-PIN "DataBus<1>"	LOC = P36; //P14;
-PIN "DataBus<2>"	LOC = P35; //P13;
-PIN "DataBus<3>"	LOC = P33; //P12;
-PIN "DataBus<4>"	LOC = P27; //P8;
-PIN "DataBus<5>"	LOC = P25; //P7;
-PIN "DataBus<6>"	LOC = P24; //P6;
-PIN "DataBus<7>"	LOC = P22; //P5;
-PIN "Romdis"	LOC = P50; //P23;
-PIN "Ramdis"	LOC = P57; //P28;
+PIN "LED1" LOC = P22;
+PIN "LED2" LOC = P23;
+PIN "LED3" LOC = P24;
+PIN "LED4" LOC = P25;
 
-PIN "nEp_Ce"	LOC = P6; //P37;
-PIN "nEp_Wr"	LOC = P20; //P3;
-PIN "Ep_A18_14<0>"	LOC = P61; //P30;
-PIN "Ep_A18_14<1>"	LOC = P62; //P31;
-PIN "Ep_A18_14<2>"	LOC = P63; //P32;
-PIN "Ep_A18_14<3>"	LOC = P2; //P34;
-PIN "Ep_A18_14<4>"	LOC = P5; //P36;
+PIN "READY" LOC = P1;
+PIN "FLT_TRK0" LOC = P2;
+PIN "US0" LOC = P4;
+PIN "US1" LOC = P5;
+PIN "nRW_SEEK" LOC = P6;
+PIN "nRSET" LOC = P58;
+PIN "FLTR_STEP" LOC = P59;
+PIN "nIORD" LOC = P60;
+PIN "nIOWR" LOC = P61;
+PIN "RESET" LOC = P62;
+PIN "nFDCCS" LOC = P63;
+
+PIN "A<15>" LOC = P33;
+PIN "A<14>" LOC = P34;
+PIN "A<13>" LOC = P35;
+PIN "A<12>" LOC = P36;
+PIN "A<11>" LOC = P38;
+PIN "A<10>" LOC = P39;
+PIN "A<9>" LOC = P40;
+PIN "A<8>" LOC = P42;
+PIN "A<7>" LOC = P43;
+PIN "A<6>" LOC = P44;
+PIN "A<5>" LOC = P45;
+PIN "A<4>" LOC = P46;
+PIN "A<3>" LOC = P47;
+PIN "A<2>" LOC = P48;
+PIN "A<1>" LOC = P49;
+PIN "A<0>" LOC = P50;
+
+PIN "D0" LOC = P51;
+PIN "nIORQ" LOC = P52;
+PIN "nWR" LOC = P56;
+PIN "nRD" LOC = P57;
