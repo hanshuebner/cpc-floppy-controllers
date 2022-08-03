@@ -17,7 +17,6 @@ cpc-fdc-cpld.xml
 cpc-fdc-cpld_build.xml
 cpc-fdc-cpld_ngdbuild.xrpt
 cpc-fdc-cpld_pad.csv
-cpc-fdc-cpld_xc9572xl-5-VQ64.jed
 cpc-fdc-cpld_xst.xrpt
 CPC_FDC.lso
 cpc-fdc-cpld.ngc
