@@ -49,14 +49,15 @@ entity CPC_FDC is
          D0: in std_logic;
 
          A13: in std_logic;
-         A: in std_logic_vector(10 downto 0);
+         A15: in std_logic;
+         A: in std_logic_vector(10 downto 0)
 );
 end CPC_FDC;
 
 architecture Behavioral of CPC_FDC is
   signal motor: std_logic := '0';
-  signal fdc_address: std_logic_vector(10 downto 0) := A(10 downto 1) & '0';
-  signal fdc_select_address: std_logic_vector(10 downto 0) := x"3F6" when nVORTEX_CPC = '0' else x"37E;
+  signal fdc_address: std_logic_vector(10 downto 0);
+  signal fdc_select_address: std_logic_vector(11 downto 0);
 begin
 
   process (CLK4, nRSET)
@@ -75,7 +76,7 @@ begin
   process (CLK4)
   begin
     if rising_edge(CLK4) then
-      if nIORQ = '0' and fdc_address = fdc_select_address then
+      if nIORQ = '0' and '0' & fdc_address = fdc_select_address then
         nFDCCS <= '0';
       else
         nFDCCS <= '1';
@@ -94,6 +95,9 @@ begin
   nDS1 <= '0' when US = "01" else '1';
   nDS2 <= '0' when US = "10" else '1';
   nDS3 <= '0' when US = "11" else '1';
+
+  fdc_address <= A(10 downto 1) & '0';
+  fdc_select_address <= x"3F6" when nVORTEX_CPC = '0' else x"37E";
   
 end Behavioral;
 
