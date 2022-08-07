@@ -8412,6 +8412,15 @@
     (uuid ff046961-88bc-41ac-ae77-874e89f07718)
   )
 
+  (text "Motor" (at 102.87 160.02 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid cae8e21b-4e68-419b-9bda-1218cf22525b)
+  )
+  (text "ROM Select\n" (at 68.58 160.02 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid d6bd94a9-9841-4411-930c-df950751d1a4)
+  )
+
   (label "D3" (at 63.5 297.18 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 05281119-e5b8-436c-a63b-dbc3c4393a87)
