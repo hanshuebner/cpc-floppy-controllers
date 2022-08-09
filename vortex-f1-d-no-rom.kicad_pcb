@@ -3053,7 +3053,7 @@
   (gr_text "https://github.com/hanshuebner/vortex-f1-d-clone" (at 114.3 71.374) (layer "B.SilkS") (tstamp 87ce2b75-d294-4d2a-a4ed-7ff3a36bea59)
     (effects (font (size 1.5 1) (thickness 0.15)) (justify mirror))
   )
-  (gr_text "CPC-FDC v0.1" (at 104.648 71.12) (layer "F.SilkS") (tstamp fa04e41d-aa0e-47cc-998b-d3cc9ad40d55)
+  (gr_text "CPC-FDC v0.2" (at 104.648 71.12) (layer "F.SilkS") (tstamp fa04e41d-aa0e-47cc-998b-d3cc9ad40d55)
     (effects (font (size 3 2) (thickness 0.3)))
   )
 
