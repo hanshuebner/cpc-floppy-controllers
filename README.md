@@ -1,4 +1,6 @@
-# Amstrad/Schneider CPC floppy controller
+# Amstrad/Schneider CPC floppy controllers
+
+> :warning: **This is a work in progress**: Don't fabricate PCBs from these files yet!
 
 This project started as attempt to clone the Vortex F1-D floppy
 controller, which supports two 720k DSDD drives.  The desire was to
