@@ -1,105 +1,63 @@
-----------------------------------------------------------------------------------
--- Target Devices:      Xilinx xc9572xl 
--- Tool versions:       ISE 14.7
-----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-entity CPC_FDC is
-  port ( nRW_SEEK: in std_logic;
-         FLTR_STEP: in std_logic;
-         FLT_TRK0: out std_logic;
-         US: in std_logic_vector(1 downto 0);
-         WE: in std_logic;
-         RESET: out std_logic;
-         nIORD: out std_logic;
-         nIOWR: out std_logic;
-         nFDCCS: out std_logic;
+entity cpc_fdc is
+  port (
+    -- CPC bus inputs
+    address        : in std_logic_vector(15 downto 0);
+    d0             : in std_logic;
+    rd_n           : in std_logic;
+    wr_n           : in std_logic;
+    ioreq_n        : in std_logic;
+    clk4           : in std_logic;
+    rset_n         : in std_logic;
+    
+    -- FDC control signal outputs
+    ldcr_n         : out std_logic;
+    ldor_n         : out std_logic;
+    iowr_n         : out std_logic;
+    iord_n         : out std_logic;
+    reset          : out std_logic;
+    fdccs_n        : out std_logic;
 
-         LED1: out std_logic;
-         nVORTEX_CPC: in std_logic;
+    -- Motor control output
+    mtron_n        : out std_logic;
 
-         STEP: out std_logic;
-         WGATE: out std_logic;
-         TRK00: in std_logic;
-         MTRON: out std_logic;
-         nDS0: out std_logic;
-         nDS1: out std_logic;
-         nDS2: out std_logic;
-         nDS3: out std_logic;
+    -- Configuration signal inputs
+    address_select : in std_logic
+    );
+end cpc_fdc;
 
-         ROMA14: out std_logic;
-         ROMA15: out std_logic;
-         ROMA16: out std_logic;
-         nROMWE: out std_logic;
-         nROMOE: out std_logic;
-         nROMCE: out std_logic;
-
-         CLK4: in std_logic;
-         nRSET: in std_logic;
-         nROMEN: in std_logic;
-         ROMDIS: out std_logic;
-         READY: in std_logic;
-         nWR: in std_logic;
-         nRD: in std_logic;
-         nIORQ: in std_logic;
-         nMREQ: in std_logic;
-
-         D0: in std_logic;
-
-         A13: in std_logic;
-         A15: in std_logic;
-         A: in std_logic_vector(10 downto 0)
-);
-end CPC_FDC;
-
-architecture Behavioral of CPC_FDC is
-  signal motor: std_logic := '0';
-  signal fdc_address: std_logic_vector(10 downto 0);
-  signal fdc_select_address: std_logic_vector(11 downto 0);
+architecture rtl of cpc_fdc is
+  signal motor_latch        : std_logic := '0';
+  constant VORTEX_FDC_ADDR  : std_logic_vector(15 downto 0) := x"FBF6";
+  constant AMSTRAD_FDC_ADDR : std_logic_vector(15 downto 0) := x"FB7E";
 begin
 
-  process (CLK4, nRSET)
+  -- Motor Latching
+  process (clk4, wr_n, address, d0, rset_n)
   begin
-    if falling_edge(CLK4) then
-      if nIORQ = '0' and nWR = '0' and A13 = '0' then
-        motor <= D0;
-      elsif nRSET = '0' then
-        motor <= '0';
+    if rising_edge(clk4) then
+      if rset_n = '0' then
+        motor_latch <= '0';
+      elsif wr_n = '0' and ioreq_n = '0' and address = x"FA7E" then
+        motor_latch <= not d0;
       end if;
     end if;
   end process;
 
-  MTRON <= motor;
+  -- Motor Output
+  mtron_n <= motor_latch;
 
-  process (CLK4)
-  begin
-    if rising_edge(CLK4) then
-      if nIORQ = '0' and '0' & fdc_address = fdc_select_address then
-        nFDCCS <= '0';
-      else
-        nFDCCS <= '1';
-      end if;
-    end if;
-  end process;
+  -- FDC control signals
+  fdccs_n <= '0' when ((address_select = '1' and address(15 downto 1) = VORTEX_FDC_ADDR(15 downto 1))
+                       or (address_select = '0' and address(15 downto 1) = AMSTRAD_FDC_ADDR(15 downto 1)))
+             else '1';
+  iowr_n  <= wr_n or ioreq_n;
+  iord_n  <= rd_n or ioreq_n;
+  reset   <= not rset_n;
+  ldcr_n  <= '1';
+  ldor_n  <= '1';
 
-  nIORD <= '0' when nIORQ = '0' and nRD = '0' else '1';
-  nIOWR <= '0' when nIORQ = '0' and nWR = '0' else '1';
-  RESET <= not nRSET;
-  FLT_TRK0 <= '1' when TRK00 = '1' and nRW_SEEK = '1' else '0';
-  STEP <= '1' when FLTR_STEP = '1' and nRW_SEEK = '1' else '0';
-  WGATE <= '1' when READY = '1' and WE = '1' else '0';
-
-  nDS0 <= '0' when US = "00" else '1';
-  nDS1 <= '0' when US = "01" else '1';
-  nDS2 <= '0' when US = "10" else '1';
-  nDS3 <= '0' when US = "11" else '1';
-
-  fdc_address <= A(10 downto 1) & '0';
-  fdc_select_address <= x"3F6" when nVORTEX_CPC = '0' else x"37E";
-  
-end Behavioral;
-
-
-
+end rtl;

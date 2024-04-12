@@ -1,59 +1,30 @@
-# ! In Fit/Implementation template, choose "Optimize Density"
-
-PIN "nRW_SEEK" LOC = P1;
-PIN "FLTR_STEP" LOC = P2;
-PIN "FLT_TRK0" LOC = P4;
-PIN "US<0>" LOC = P5;
-PIN "US<1>" LOC = P6;
-PIN "WE" LOC = P7;
-PIN "RESET" LOC = P8;
-PIN "nIORD" LOC = P9;
-PIN "nIOWR" LOC = P10;
-PIN "nFDCCS" LOC = P11;
-
-PIN "LED1" LOC = P15;
-PIN "nVORTEX_CPC" LOC = P16;
-
-PIN "A<9>" LOC = P17;
-PIN "A<8>" LOC = P18;
-
-PIN "STEP" LOC = P20;
-PIN "WGATE" LOC = P22;
-PIN "TRK00" LOC = P23;
-PIN "MTRON" LOC = P24;
-PIN "nDS2" LOC = P25;
-PIN "nDS1" LOC = P27;
-PIN "nDS0" LOC = P31;
-PIN "nDS3" LOC = P32;
-
-
-PIN "ROMA15" LOC = P64;
-PIN "ROMA16" LOC = P63;
-PIN "nROMCE" LOC = P62;
-PIN "nROMOE" LOC = P61;
-PIN "nROMWE" LOC = P60;
-PIN "ROMA14" LOC = P59;
-
-PIN "CLK4" LOC = P58;
-PIN "ROMDIS" LOC = P57;
-PIN "nRSET" LOC = P56;
-PIN "nROMEN" LOC = P52;
-PIN "READY" LOC = P51;
-PIN "nWR" LOC = P50;
-PIN "nRD" LOC = P49;
-PIN "nIORQ" LOC = P48;
-PIN "nMREQ" LOC = P47;
-PIN "D0" LOC = P46;
-
-PIN "A15" LOC = P45;
-PIN "A13" LOC = P44;
-PIN "A<10>" LOC = P43;
-PIN "A<7>" LOC = P42;
-PIN "A<6>" LOC = P40;
-PIN "A<5>" LOC = P39;
-PIN "A<4>" LOC = P38;
-PIN "A<3>" LOC = P36;
-PIN "A<2>" LOC = P35;
-PIN "A<1>" LOC = P34;
-PIN "A<0>" LOC = P33;
+PIN "a0" LOC = P1;
+PIN "a1" LOC = P2;
+PIN "a2" LOC = P3;
+PIN "a3" LOC = P5;
+PIN "a4" LOC = P6;
+PIN "a5" LOC = P7;
+PIN "a6" LOC = P8;
+PIN "a7" LOC = P12;
+PIN "a8" LOC = P13;
+PIN "a9" LOC = P14;
+PIN "a10" LOC = P16;
+PIN "a11" LOC = P18;
+PIN "a12" LOC = P19;
+PIN "a13" LOC = P20;
+PIN "a14" LOC = P21;
+PIN "a15" LOC = P22;
+PIN "clk4" LOC = P43;
+PIN "d0" LOC = P38;
+PIN "reset" LOC = P32;
+PIN "fdccs_n" LOC = P33;
+PIN "iord_n" LOC = P30;
+PIN "iorq_n" LOC = P40;
+PIN "iowr_n" LOC = P31;
+PIN "ldcr_n" LOC = P27;
+PIN "ldor_n" LOC = P28;
+PIN "mtron_n" LOC = P29;
+PIN "rd_n" LOC = P42;
+PIN "rset_n" LOC = P44;
+PIN "wr_n" LOC = P41;
 

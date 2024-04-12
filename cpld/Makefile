@@ -1,5 +1,5 @@
 project_name ?= cpc-fdc-cpld
-target ?= xc9572xl-5-VQ64
+target ?= xc9572xl-10-VQ44
 
 # alternative speed, density
 optimize ?= speed
@@ -77,4 +77,5 @@ clean:
 		tmperr.err \
 		xlnx_auto_0_xdb/ \
 		xst/ \
+		tmp/ \
 		*~
