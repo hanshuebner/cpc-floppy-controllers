@@ -19,6 +19,7 @@ cpc-fdc-cpld_ngdbuild.xrpt
 cpc-fdc-cpld_pad.csv
 cpc-fdc-cpld_xst.xrpt
 CPC_FDC.lso
+CPC_FDC.tspec
 cpc-fdc-cpld.ngc
 cpc-fdc-cpld.ngr
 tmperr.err

@@ -1,19 +1,21 @@
-PIN "a0" LOC = P1;
-PIN "a1" LOC = P2;
-PIN "a2" LOC = P3;
-PIN "a3" LOC = P5;
-PIN "a4" LOC = P6;
-PIN "a5" LOC = P7;
-PIN "a6" LOC = P8;
-PIN "a7" LOC = P12;
-PIN "a8" LOC = P13;
-PIN "a9" LOC = P14;
-PIN "a10" LOC = P16;
-PIN "a11" LOC = P18;
-PIN "a12" LOC = P19;
-PIN "a13" LOC = P20;
-PIN "a14" LOC = P21;
-PIN "a15" LOC = P22;
+# ! In Fit/Implementation template, choose "Optimize Density"
+
+PIN "a<0>" LOC = P1;
+PIN "a<1>" LOC = P2;
+PIN "a<2>" LOC = P3;
+PIN "a<3>" LOC = P5;
+PIN "a<4>" LOC = P6;
+PIN "a<5>" LOC = P7;
+PIN "a<6>" LOC = P8;
+PIN "a<7>" LOC = P12;
+PIN "a<8>" LOC = P13;
+PIN "a<9>" LOC = P14;
+PIN "a<10>" LOC = P16;
+PIN "a<11>" LOC = P18;
+PIN "a<12>" LOC = P19;
+PIN "a<13>" LOC = P20;
+PIN "a<14>" LOC = P21;
+PIN "a<15>" LOC = P22;
 PIN "clk4" LOC = P43;
 PIN "d0" LOC = P38;
 PIN "reset" LOC = P32;
@@ -28,3 +30,5 @@ PIN "rd_n" LOC = P42;
 PIN "rset_n" LOC = P44;
 PIN "wr_n" LOC = P41;
 
+NET "clk4" TNM_NET = "clk4_grp";
+TIMESPEC "ts_clk4" = PERIOD "clk4_grp" 250.0ns HIGH 50%;
