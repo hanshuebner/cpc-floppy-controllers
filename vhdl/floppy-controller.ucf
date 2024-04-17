@@ -3,48 +3,48 @@
 # Constraints for XC9572XL CPLD in a 44-pin package
 
 # Pin assignments for address pins
-NET "address<15>" LOC = "1";   # Example location, adjust as needed
-NET "address<14>" LOC = "2";   # Example location, adjust as needed
-NET "address<13>" LOC = "3";   # Example location, adjust as needed
-NET "address<12>" LOC = "4";   # Example location, adjust as needed
-NET "address<11>" LOC = "5";   # Example location, adjust as needed
-NET "address<10>" LOC = "6";   # Example location, adjust as needed
-NET "address<9>"  LOC = "7";   # Example location, adjust as needed
-NET "address<8>"  LOC = "8";   # Example location, adjust as needed
-NET "address<7>"  LOC = "9";   # Example location, adjust as needed
-NET "address<6>"  LOC = "10";  # Example location, adjust as needed
-NET "address<5>"  LOC = "11";  # Example location, adjust as needed
-NET "address<4>"  LOC = "12";  # Example location, adjust as needed
-NET "address<3>"  LOC = "13";  # Example location, adjust as needed
-NET "address<2>"  LOC = "14";  # Example location, adjust as needed
-NET "address<1>"  LOC = "15";  # Example location, adjust as needed
-NET "address<0>"  LOC = "16";  # Example location, adjust as needed
+NET "address<15>" LOC = "P39";   # Example location, adjust as needed
+NET "address<14>" LOC = "P38";   # Example location, adjust as needed
+NET "address<13>" LOC = "P36";   # Example location, adjust as needed
+NET "address<12>" LOC = "P35";   # Example location, adjust as needed
+NET "address<11>" LOC = "P34";   # Example location, adjust as needed
+NET "address<10>" LOC = "P33";   # Example location, adjust as needed
+NET "address<9>"  LOC = "P32";   # Example location, adjust as needed
+NET "address<8>"  LOC = "P31";   # Example location, adjust as needed
+NET "address<7>"  LOC = "P27";   # Example location, adjust as needed
+NET "address<6>"  LOC = "P25";  # Example location, adjust as needed
+NET "address<5>"  LOC = "P24";  # Example location, adjust as needed
+NET "address<4>"  LOC = "P23";  # Example location, adjust as needed
+NET "address<3>"  LOC = "P22";  # Example location, adjust as needed
+NET "address<2>"  LOC = "P20";  # Example location, adjust as needed
+NET "address<1>"  LOC = "P19";  # Example location, adjust as needed
+NET "address<0>"  LOC = "P18";  # Example location, adjust as needed
 
 # Pin assignments for data pins
-NET "data_io<7>" LOC = "22";   # Example location, adjust as needed
-NET "data_io<6>" LOC = "23";   # Example location, adjust as needed
-NET "data_io<5>" LOC = "24";   # Example location, adjust as needed
-NET "data_io<4>" LOC = "25";   # Example location, adjust as needed
-NET "data_io<3>" LOC = "26";   # Example location, adjust as needed
-NET "data_io<2>" LOC = "27";   # Example location, adjust as needed
-NET "data_io<1>" LOC = "28";   # Example location, adjust as needed
-NET "data_io<0>" LOC = "29";   # Example location, adjust as needed
+NET "data_io<7>" LOC = "P17";   # Example location, adjust as needed
+NET "data_io<6>" LOC = "P16";   # Example location, adjust as needed
+NET "data_io<5>" LOC = "P15";   # Example location, adjust as needed
+NET "data_io<4>" LOC = "P13";   # Example location, adjust as needed
+NET "data_io<3>" LOC = "P12";   # Example location, adjust as needed
+NET "data_io<2>" LOC = "P11";   # Example location, adjust as needed
+NET "data_io<1>" LOC = "P10";   # Example location, adjust as needed
+NET "data_io<0>" LOC = "P9";   # Example location, adjust as needed
 
 # Continue assigning other address and data pins similarly...
 
 # Pin assignments for other signals
-NET "rd_n"    LOC = "42";      # Example location, adjust as needed
-NET "wr_n"    LOC = "41";      # Example location, adjust as needed
-NET "ioreq_n" LOC = "40";      # Example location, adjust as needed
-NET "address_select" LOC = "39";  # Example location, adjust as needed
-NET "reset_n" LOC = "38";     # Example location, adjust as needed
-NET "motor"   LOC = "37";      # Example location, adjust as needed
-NET "floppycs" LOC = "36";     # Example location, adjust as needed
-NET "iowr_n"  LOC = "35";      # Example location, adjust as needed
-NET "iord_n"  LOC = "34";      # Example location, adjust as needed
-NET "reset"   LOC = "33";      # Example location, adjust as needed
+NET "rd_n"    LOC = "P6";      # Example location, adjust as needed
+NET "wr_n"    LOC = "P4";      # Example location, adjust as needed
+NET "ioreq_n" LOC = "P5";      # Example location, adjust as needed
+NET "address_select" LOC = "P51";  # Example location, adjust as needed
+NET "reset_n" LOC = "P52";     # Example location, adjust as needed
+NET "motor"   LOC = "P49";      # Example location, adjust as needed
+NET "floppycs" LOC = "P48";     # Example location, adjust as needed
+NET "iowr_n"  LOC = "P58";      # Example location, adjust as needed
+NET "iord_n"  LOC = "P56";      # Example location, adjust as needed
+NET "reset"   LOC = "P48";      # Example location, adjust as needed
 
-NET "clk4" LOC = "17";
+NET "clk4" LOC = "P47";
 
 # Timing constraints (if any)
 

@@ -11,6 +11,7 @@ entity top_level is
     ioreq_n : in std_logic;
     address_select: in std_logic;
     reset_n : in std_logic;
+    clk4    : in std_logic;
     motor   : out std_logic;
     floppycs: out std_logic;
     iowr_n  : out std_logic;
