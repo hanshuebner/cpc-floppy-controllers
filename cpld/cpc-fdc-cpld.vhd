@@ -43,13 +43,13 @@ begin
       if rset_n = '0' then
         motor_latch <= '0';
       elsif wr_n = '0' and iorq_n = '0' and a = FD_MOTOR_ADDR then
-        motor_latch <= not d0;
+        motor_latch <= d0;
       end if;
     end if;
   end process;
 
   -- Motor Output
-  mtron_n <= motor_latch;
+  mtron_n <= '0' when motor_latch = '1' else 'Z';
 
   -- FDC control signals
   fdccs_n <= '0' when ((address_select = '1' and a(15 downto 1) = VORTEX_FDC_ADDR(15 downto 1))
