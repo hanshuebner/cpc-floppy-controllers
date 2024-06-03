@@ -29,6 +29,7 @@ PIN "mtron_n" LOC = P29;
 PIN "rd_n" LOC = P42;
 PIN "rset_n" LOC = P44;
 PIN "wr_n" LOC = P41;
+PIN "address_select" LOC = P23;
 
 NET "clk4" TNM_NET = "clk4_grp";
 TIMESPEC "ts_clk4" = PERIOD "clk4_grp" 250.0ns HIGH 50%;
